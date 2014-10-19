@@ -42,7 +42,6 @@ public class GameScreen implements Screen{
 		_interface.setViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),false);
 		
 		stage.addActor(world.backgoround_stage);
-		stage.addActor(world.player.fish);
 		stage.addActor(world.fishes);
 		stage.addActor(world.skills);
 		
@@ -52,26 +51,6 @@ public class GameScreen implements Screen{
 		stage.addCaptureListener(new InputListener() {
 	        public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
 
-	        	Actor temp = stage.hit(x, y, false);
-	        	
-	        	if(temp != null){
-	        		world.player.fish.target = (Fish)temp;
-	        		return false;
-	        	}
-	        	
-	    		boolean temp_direction = world.player.fish.moving.direction;
-	    		boolean current_direction = x>world.player.fish.getX();
-	    		
-	    		world.player.fish.moving.direction = current_direction;
-	    		if(current_direction!=temp_direction)
-	    			world.player.fish.flip_fish();
-	    		
-	    		float dx = world.player.fish.getX() - x;
-	    		float dy = world.player.fish.getY() - y;
-	    		
-	    		float duration = (float) (Math.sqrt(dx*dx+dy*dy)/world.player.fish.moving.speed)/10f;
-	    		
-	    		world.player.fish.addAction(Actions.moveTo(x, y, duration));
                 return true;
 	        }
 	        
@@ -99,10 +78,6 @@ public class GameScreen implements Screen{
 			@Override
 			public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 				Actor interface_button = _interface.hit(screenX, sh-screenY, false);
-				if(interface_button != null){
-					_interface.proceed_button(interface_button);
-					return false;
-				}
 				
 				stage.touchDown(screenX, screenY, pointer, button);
 				return false;
@@ -144,9 +119,8 @@ public class GameScreen implements Screen{
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); 
 		camera.update();
 
-		stateTime += Gdx.graphics.getDeltaTime();
-		stage.getCamera().position.set(world.player.fish.getX(), world.player.fish.getY(), 0);
-
+		//stateTime += Gdx.graphics.getDeltaTime();
+		
 		stage.draw();
 		stage.act(Gdx.graphics.getDeltaTime());
 		

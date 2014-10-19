@@ -17,7 +17,6 @@ public class Fish extends Actor{
 	public int level;
 	public String name;
 	private Model model;
-	public Moving moving;
 	private boolean self;
 	private World world;
 	
@@ -26,7 +25,6 @@ public class Fish extends Actor{
 	}
 	
 	Fish(World world, String name){
-		moving = new Moving();
 		model = new Model();
 		
 		this.name=name;
@@ -61,27 +59,5 @@ public class Fish extends Actor{
 		for(int i=0;i!=this.model.walkFrames.length;i++)
 			this.model.walkFrames[i].flip(true, false);
 	}
-	
-	public void performSkill(int id){
-		switch(id){
-		case 0:
-			Skill skill = new Skill(this,this.target,0);
-			skill.setBounds(getX(), getY(), 20, 20);
-			
-			float x_diff = getX()-this.target.getX();
-			float y_diff = getY()-this.target.getY();
-			
-			double destination = Math.sqrt(x_diff*x_diff + y_diff*y_diff);
-			
-			skill.addAction(Actions.moveTo(this.target.getX(), this.target.getY(), (float) (destination/100f)));
-			this.world.skills.addActor(skill);
-			break;
-		case 1:
-			SequenceAction sequence = new SequenceAction();
-			sequence.addAction(Actions.moveTo(this.target.getX(), this.target.getY(), .3f));
-			sequence.addAction(Actions.moveTo(this.getX(), this.getY(), .3f));
-			this.addAction(sequence);
-			break;
-		}
-	}
+
 }

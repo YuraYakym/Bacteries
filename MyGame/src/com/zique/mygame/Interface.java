@@ -68,46 +68,15 @@ public class Interface extends Stage{
 		@Override
 		public void draw(SpriteBatch batch, float parentAlpha){
 			super.draw(batch,parentAlpha);
-			
-			batch.end();
-			
+
 			shape.begin(ShapeType.FilledRectangle);
 				shape.setColor(0, 0, 0, 1);
 				shape.filledRect(45, sh-20, 202, 17);
 				
 				shape.filledRect(10, 480, 70, 17);
-				
-				shape.setColor(1,0,0,0.75f);
-				shape.filledRect(46, sh-19, this.world.player.fish.current_health*200/this.world.player.fish.max_health, 15);
-				
-				if(this.world.player.fish.target != null){
-					shape.setColor(0,0,0,1f);
-					shape.filledRect(sw/2, sh-20, 202, 17);
-					shape.setColor(1,0,0,0.75f);
-					shape.filledRect(sw/2, sh-19, this.world.player.fish.target.current_health*200/this.world.player.fish.target.max_health, 15);
-				}
 			shape.end();
 			
-			shape.begin(ShapeType.FilledCircle);
-				shape.setColor(0,0,0,1);
-				shape.filledCircle(30, sh-30, 20);
-				if(this.world.player.fish.target != null){
-					shape.filledCircle(sw/2+200, sh-30, 20);
-				}
-			shape.end();
-			
-			
-			batch.begin();
-			font.draw(batch, this.world.player.fish.current_health+"/"+this.world.player.fish.max_health, 100, 533);
-			font.draw(batch, ""+this.world.player.fish.level, 25, sh-25);
-			
-			if(this.world.player.fish.target != null){
-				font.draw(batch, this.world.player.fish.target.current_health+"/"+this.world.player.fish.target.max_health, sw/2+100, sh-5);
-				font.draw(batch, ""+this.world.player.fish.target.level, sw/2+200, sh-25);
-				font.draw(batch, ""+this.world.player.fish.target.name, sw/2+150, sh-35);
-			}
-			
-			font.draw(batch, this.world.player.fish.name, 12, 495);
+			font.draw(batch, "123123", 12, 495);
 		}
 	}
 	
@@ -122,21 +91,6 @@ public class Interface extends Stage{
 		button_texture = new TextureRegion[2];
 		button_texture[0] = new TextureRegion(Assets.texture_buttons);
 		button_texture[1] = new TextureRegion(Assets.texture_buttons);
-	}
-	
-	public void proceed_button(Actor button){
-		Button but = (Button)button;
-		switch(but.type){
-		case 0:
-			switch(but.id){
-			case 0:
-				this.world.player.fish.performSkill(0);
-				break;
-			case 1:
-				this.world.player.fish.performSkill(1);
-				break;
-			}
-		}
 	}
 	
 }

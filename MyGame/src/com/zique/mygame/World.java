@@ -9,7 +9,6 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class World{
-	public Player player;
 	//public Fish[] players;
 	public Group fishes;
 	public Group backgoround_stage;
@@ -20,7 +19,6 @@ public class World{
 	private Texture static_stage_textures;
 	
 	World(){
-		player = new Player(this);
 		backgoround_stage = new Group();
 		fishes = new Group();
 		this.static_stage_textures = Assets.texture_static_stage;
