@@ -1,0 +1,28 @@
+package com.zique.mygame;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Group;
+
+public class Background {
+	
+	private class BackgroundActor extends Actor{
+		private Texture texture;
+		
+		BackgroundActor(){
+			
+		}
+		
+		@Override
+		public void draw(SpriteBatch batch, float parentAlpha){
+			
+		}
+	};
+	
+	public Group backgroundElements;
+	
+	public void draw_background(){
+		Actor bg = new Actor();
+		//backgroundElements.addActor(actor);
+	}
+}

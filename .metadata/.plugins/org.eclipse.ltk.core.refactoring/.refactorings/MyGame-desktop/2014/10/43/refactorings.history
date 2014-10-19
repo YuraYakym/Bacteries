@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyGame-desktop/assets/Background/dark-abstract-art-backgrounds-hd-pictures-4.jpg&apos; to &apos;dark-temp-bg.jpg&apos;" description="Rename resource &apos;dark-abstract-art-backgrounds-hd-pictures-4.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="assets/Background/dark-abstract-art-backgrounds-hd-pictures-4.jpg" name="dark-temp-bg.jpg" stamp="1413730492334" updateReferences="true"/>
+</session>

@@ -13,7 +13,6 @@ INDEX VERSION 1.126+C:\Users\Yura\Documents\Bacteries\.metadata\.plugins\org.ecl
 2394657268.index
 325790133.index
 1101175347.index
-3333377542.index
 1190399147.index
 735681076.index
 3756553594.index

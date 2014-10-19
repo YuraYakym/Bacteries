@@ -1,0 +1,8 @@
+package com.zique.mygame;
+
+public class Background {
+	
+	public void draw_background(){
+		
+	}
+}

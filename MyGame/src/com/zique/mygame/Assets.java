@@ -16,6 +16,8 @@ public class Assets {
 	public static Sprite sprite_test_fish;
 	public static Texture texture_skills;
 	
+	public static Texture temp_bg;
+	
 	public static Animation[] animation_forwarding,animation_explosion;
 	
 	
@@ -25,6 +27,7 @@ public class Assets {
 		sprite_static_stage = new Sprite(texture_static_stage);
 		sprite_static_stage.flip(false, true);
 		
+		temp_bg = new Texture(Gdx.files.internal("Background/dark-temp-bg.jpg"));
 		texture_buttons = new Texture(Gdx.files.internal("skills.png"));
 		texture_buttons.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		
